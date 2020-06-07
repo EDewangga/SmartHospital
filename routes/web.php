@@ -23,13 +23,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/room', 'KamarController@index');
+Route::get('/room', 'RoomController@index');
 
-Route::get('periksa', 'PeriksaController@index');
-Route::post('periksa', 'PeriksaController@Store');
+Route::get('periksa', 'AppointmentController@index');
+Route::post('periksa', 'AppointmentController@Store');
+Route::get('periksa/{id}', 'AppointmentController@show');
 
 Route::get('qrcode', function () {
     return QrCode::size(300)->generate('A basic example of QR code!');
 });
 
-Route::get('/json-kelaskamar','KamarController@kelaskamar');
+Route::get('/json-kelaskamar','RoomController@kelaskamar');

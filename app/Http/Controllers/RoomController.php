@@ -6,7 +6,7 @@ use App\Models\Room;
 use Illuminate\Http\Request;
 use Psy\Util\Json;
 
-class KamarController extends Controller
+class RoomController extends Controller
 {
     public function index()
     {

@@ -67,22 +67,30 @@
                                         </div>
                                         <section class="button-area">
                                             <div class="container box_1170 border-top-generic">
-                                                {!! Form::open() !!}
+                                                {{-- {!! Form::open() !!} --}}
                                                 <div class="single-element-widget mt-30">
                                                     <h3 class="mb-30">Pilih Jenis Kamar</h3>
                                                     <div class="default-select mb-30" id="default-select">
                                                         <select class="form-control" id="kelaskamar" name="kelas_kamar">
+                                                        <option value="all">semua</option>
                                                         <option value="standard">Standard</option>
                                                         <option value="vip">VIP</option>
                                                         </select>
                                                     </div>
-                                                {!! Form::close() !!}
+                                                {{-- {!! Form::close() !!} --}}
                                                     </div>
                                                         <div class="button-group-area mt-30">
                                                             @foreach ($rooms as $room)
-                                                                <a href="#" class="genric-btn default mb-20"> {{$room->nomor}}</a>
-                                                            @endforeach
-
+                                                            @if ($room->lokasi == 1)
+                                                                @if ($room->status == 1)
+                                                                    <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
+                                                                @elseif ($room->status == 0)
+                                                                    <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
+                                                                @else
+                                                                    <a href="#" class="genric-btn warning radius" disabled>{{$room->nomor}}</a>
+                                                                @endif
+                                                            @endif
+                                                        @endforeach
                                                         </div>
                                                     </div>
                                         </section>
@@ -111,6 +119,35 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <section class="button-area">
+                                        <div class="container box_1170 border-top-generic">
+                                            {{-- {!! Form::open() !!} --}}
+                                            <div class="single-element-widget mt-30">
+                                                <h3 class="mb-30">Pilih Jenis Kamar</h3>
+                                                <div class="default-select mb-30" id="default-select">
+                                                    <select class="form-control" id="kelaskamar" name="kelas_kamar">
+                                                    <option value="all">semua</option>
+                                                    <option value="standard">Standard</option>
+                                                    <option value="vip">VIP</option>
+                                                    </select>
+                                                </div>
+                                            {{-- {!! Form::close() !!} --}}
+                                                </div>
+                                                    <div class="button-group-area mt-30">
+                                                        @foreach ($rooms as $room)
+                                                            @if ($room->lokasi == 2)
+                                                                @if ($room->status == 1)
+                                                                    <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
+                                                                @elseif ($room->status == 0)
+                                                                    <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
+                                                                @else
+                                                                    <a href="#" class="genric-btn warning radius">{{$room->nomor}}</a>
+                                                                @endif
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                    </section>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <div class="row align-items-center">
@@ -133,6 +170,36 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <section class="button-area">
+                                        <div class="container box_1170 border-top-generic">
+                                            {{-- {!! Form::open() !!} --}}
+                                            <div class="single-element-widget mt-30">
+                                                <h3 class="mb-30">Pilih Jenis Kamar</h3>
+                                                <div class="default-select mb-30" id="default-select">
+                                                    <select class="form-control" id="kelaskamar" name="kelas_kamar">
+                                                    <option value="all">semua</option>
+                                                    <option value="standard">Standard</option>
+                                                    <option value="vip">VIP</option>
+                                                    </select>
+                                                </div>
+                                            {{-- {!! Form::close() !!} --}}
+                                                </div>
+                                                    <div class="button-group-area mt-30">
+                                                    @foreach ($rooms as $room)
+                                                        @if ($room->lokasi == 3)
+                                                            @if ($room->status == 1)
+                                                                <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
+                                                            @elseif ($room->status == 0)
+                                                                <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
+                                                            @else
+                                                                <a href="#" class="genric-btn warning radius">{{$room->nomor}}</a>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+
+                                                    </div>
+                                                </div>
+                                    </section>
                         </div>
                       </div>
         </div>

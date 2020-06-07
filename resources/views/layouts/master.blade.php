@@ -101,8 +101,8 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="/">Home</a></li>
-                                        <li><a href="periksa">Periksa</a></li>
-                                        <li><a href="room">Rawat Inap</a></li>
+                                        <li><a href="/periksa">Periksa</a></li>
+                                        <li><a href="/room">Rawat Inap</a></li>
                                         <li><a href="#">Resep Obat</a></li>
                                     </ul>
                                 </nav>
@@ -159,7 +159,10 @@
                             <input type="text" name="telp" placeholder="Phone no.">
                         </div>
                         <div class="col-xl-12">
+                            @guest
+                            @else
                             <input type="email" name="email" value="{{Auth::user()->email}}">
+                            @endguest
 
                         </div>
                         <div class="col-xl-12">
