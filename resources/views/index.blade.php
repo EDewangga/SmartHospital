@@ -11,7 +11,7 @@
                         <div class="slider_text ">
                             <h3> <span>Kualitas</span> <br>
                                 untuk keluarga anda </h3>
-                            <p>dalam sektor kesehatan, keunggulan layanan kami adalah fasilitas <br>
+                            <p>Dalam sektor kesehatan, keunggulan layanan kami adalah fasilitas <br>
                                 rumah sakit sebagai penyedia layanan kesehatan secara konsisten </p>
                             <a href="#" class="boxed-btn3">Check Our Services</a>
                         </div>

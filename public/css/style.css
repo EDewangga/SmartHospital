@@ -3391,6 +3391,13 @@ h6 {
   transition: all 0.3s ease 0s;
 }
 
+.genric-btn.fixed {
+    min-width: 120px;
+    max-width: 120px;
+    padding: 10px;
+    margin: 20px;
+  }
+
 /* line 166, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_elements.scss */
 .genric-btn:focus {
   outline: none;
@@ -4443,6 +4450,7 @@ h6 {
 .default-select {
   height: 40px;
 }
+
 
 /* line 1001, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_elements.scss */
 .default-select .nice-select {

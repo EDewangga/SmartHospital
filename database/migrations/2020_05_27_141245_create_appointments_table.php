@@ -20,7 +20,8 @@ class CreateAppointmentsTable extends Migration
             $table->string('nama')->nullable();
             $table->string('telp')->nullable();
             $table->string('email')->nullable();
-            $table->foreignId('user_id')->nullable();
+            $table->foreignId('user_id')->unsigned();
+            $table->foreignId('doctor_id')->unsigned();
             $table->string('qrcode')->nullable();
             $table->timestamps();
         });

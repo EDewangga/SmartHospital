@@ -9,5 +9,5 @@ class Room extends Model
     protected $table = 'rooms';
 
 
-    // protected $guarded = ['id','created_at','deleted_at'];
+    protected $guarded = ['id','created_at','deleted_at'];
 }

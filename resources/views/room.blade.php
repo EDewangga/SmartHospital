@@ -11,7 +11,7 @@
             <div class="col-xl-12">
                 <div class="bradcam_text">
                     <h3>ROOM</h3>
-                    <p><a href="index.html">Home /</a> Room</p>
+                    <p><a href="/">Home /</a> Room</p>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                                                             @foreach ($rooms as $room)
                                                             @if ($room->lokasi == 1)
                                                                 @if ($room->status == 1)
-                                                                    <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
+                                                                    <a href="#" class="genric-btn info-border radius fixed">{{$room->nomor}}</a>
                                                                 @elseif ($room->status == 0)
                                                                     <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                                 @else
@@ -137,7 +137,7 @@
                                                         @foreach ($rooms as $room)
                                                             @if ($room->lokasi == 2)
                                                                 @if ($room->status == 1)
-                                                                    <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
+                                                                    <a href="#" class="genric-btn info-border radius">{{$room->nomor}}</a>
                                                                 @elseif ($room->status == 0)
                                                                     <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                                 @else
@@ -188,7 +188,7 @@
                                                     @foreach ($rooms as $room)
                                                         @if ($room->lokasi == 3)
                                                             @if ($room->status == 1)
-                                                                <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
+                                                                <a href="#" class="genric-btn info-border radius">{{$room->nomor}}</a>
                                                             @elseif ($room->status == 0)
                                                                 <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                             @else

@@ -23,7 +23,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/room', 'RoomController@index');
+Route::get('/kamar', 'RoomController@index');
+
+Route::get('/doctor', 'DoctorController@index');
+
+Route::get('/preception', 'MedicalController@preception');
+Route::post('/preception/fetch', 'MedicalController@fetch')->name('dynamicdependent.fetch');
+Route::post('/preception/fetch-result', 'MedicalController@fetchResult')->name('dynamicdependent.fetch.result');
+
+Route::get('medical', 'MedicalController@index');
+Route::post('medical', 'MedicalController@Store');
+Route::get('medical/{id}', 'MedicalController@show');
 
 Route::get('periksa', 'AppointmentController@index');
 Route::post('periksa', 'AppointmentController@Store');
@@ -32,5 +42,9 @@ Route::get('periksa/{id}', 'AppointmentController@show');
 Route::get('qrcode', function () {
     return QrCode::size(300)->generate('A basic example of QR code!');
 });
+
+Route::get('resep-obat', 'AppointmentController@index');
+Route::post('resep-obat', 'AppointmentController@Store');
+Route::get('resep-obat/{id}', 'AppointmentController@show');
 
 Route::get('/json-kelaskamar','RoomController@kelaskamar');

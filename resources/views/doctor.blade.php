@@ -1,0 +1,271 @@
+@extends('layouts.master')
+
+
+
+@section('content')
+
+
+<div class="bradcam_area breadcam_bg bradcam_overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>Doctor Profile</h3>
+                    <p><a href="/">Home /</a> Room</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="business_expert_area">
+    <div class="business_tabs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <ul class="nav" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                        aria-selected="true">Rumah Sakit A</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                        aria-selected="false">Rumah Sakit B</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                        aria-selected="false">Rumah Sakit C</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="border_bottom">
+                <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row align-items-center">
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="business_info">
+                                                <div class="icon">
+                                                    <i class="flaticon-first-aid-kit"></i>
+                                                </div>
+                                                <h3>Rumah Sakit A</h3>
+                                                <p>Rumah Sakit A merupakan bagian dari Columbia Asia Group dan telah mendapatkan akreditasi Paripurna pada tahun 2016.
+                                                    Rumah Sakit A memiliki Visi mewujudkan rumah sakit pilihan utama di Indonesia. Dengan Misi mewujudkan pelayanan kesehatan yang efektif,
+                                                    memberikan pelayanan kesehatan yang terbaik, menjadi rumah sakit terkemuka dengan SDM dan fasilitas kerja yang efisien.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="business_thumb">
+                                                <img src="img/hospital/hospital1.jpg" alt="">
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="expert_doctors_area doctor_page">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="single_expert mb-40">
+                                                    <div class="expert_thumb">
+                                                        <img src="img/experts/1.png" alt="">
+                                                    </div>
+                                                    <div class="experts_name text-center">
+                                                        <h3>Dr. Rehaan Dickerson</h3>
+                                                        <span>Dokter Umum</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="single_expert mb-40">
+                                                    <div class="expert_thumb">
+                                                        <img src="img/experts/2.png" alt="">
+                                                    </div>
+                                                    <div class="experts_name text-center">
+                                                        <h3>Dr. Winifred Beaumont</h3>
+                                                        <span>Psikiater</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="single_expert mb-40">
+                                                    <div class="expert_thumb">
+                                                        <img src="img/experts/3.png" alt="">
+                                                    </div>
+                                                    <div class="experts_name text-center">
+                                                        <h3>Dr. Carley Watkins</h3>
+                                                        <span>Dokter anak</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="single_expert mb-40">
+                                                    <div class="expert_thumb">
+                                                        <img src="img/experts/4.png" alt="">
+                                                    </div>
+                                                    <div class="experts_name text-center">
+                                                        <h3>Dr. Mujtaba Preece</h3>
+                                                        <span>Dokter Umum</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row align-items-center">
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="business_info">
+                                                <div class="icon">
+                                                    <i class="flaticon-first-aid-kit"></i>
+                                                </div>
+                                                <h3>Rumah Sakit B</h3>
+                                                <p>Rumah Sakit Islam Surabaya merupakan Rumah Sakit yang telah melayani masyarakat sejak tahun 1975.
+                                                    Memiliki Visi menjadi Rumah Sakit islam pilihan utama masyarakat. Dengan Misi memberikan pelayanan kesehatan paripurna secara
+                                                    islami berdasarkan nilai-nilai tawadlu’, meningkatkan mutu pelayanan kesehatan, meningkatkan ilmu pengetahuan, keterampilan dan
+                                                    sikap terpuji karyawan, mengikuti perkembangan IPTEK dibidang pelayanan kesehatan, mennjadikan karyawan sebagai inovator Rumah
+                                                    Sakit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="business_thumb">
+                                                <img src="img/hospital/hospital2.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="expert_doctors_area doctor_page">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/6.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Lorcan Walter</h3>
+                                                            <span>Dokter Umum</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/7.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Thierry Booker</h3>
+                                                            <span>Psikiater</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/8.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Lucille Church</h3>
+                                                            <span>Dokter anak</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/9.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Macauley Reyes</h3>
+                                                            <span>Dokter THT</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="row align-items-center">
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="business_info">
+                                                <div class="icon">
+                                                    <i class="flaticon-first-aid-kit"></i>
+                                                </div>
+                                                <h3>Rumah Sakit C</h3>
+                                                <p>Rumah Sakit C adalah Rumah Sakit yang berada di kota Kediri yang berdiri sejak tahun 1957. Dimana Rumah Sakit ini dilandasi
+                                                    dengan pelayanan kasih terhadap sesama, yang didasari dengan iman, sebagai manifestasi rasa syukur kepada Tuhan. Perbaikan yang
+                                                    berkesinambungan dalam mutu pelayanan & fasilitas.merupakan bentuk konsekuensi kami sebagai "Sahabat Terpercaya Menuju Sehat"
+                                                    Visi : Menjadi Rumah Sakit Pilihan dan Rujukan Utama dengan dasar Kasih Kristus.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="business_thumb">
+                                                <img src="img/hospital/hospital3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="expert_doctors_area doctor_page">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/1.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Alara Kline</h3>
+                                                            <span>Dokter Umum</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/2.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Jorge Timms</h3>
+                                                            <span>Psikiater</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/3.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Nisha Murillo</h3>
+                                                            <span>Dokter anak</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="single_expert mb-40">
+                                                        <div class="expert_thumb">
+                                                            <img src="img/experts/4.png" alt="">
+                                                        </div>
+                                                        <div class="experts_name text-center">
+                                                            <h3>Dr. Ana Barlow</h3>
+                                                            <span>Dokter THT</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                        </div>
+        </div>
+    </div>
+</div>
+@endsection
+

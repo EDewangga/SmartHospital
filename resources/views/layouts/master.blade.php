@@ -12,6 +12,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
     <!-- Place favicon.ico in the root directory -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
@@ -24,7 +28,8 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/slicknav.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    @yield('styles')
+
 </head>
 
 <body>
@@ -102,8 +107,9 @@
                                     <ul id="navigation">
                                         <li><a class="active" href="/">Home</a></li>
                                         <li><a href="/periksa">Periksa</a></li>
-                                        <li><a href="/room">Rawat Inap</a></li>
+                                        <li><a href="/kamar">Rawat Inap</a></li>
                                         <li><a href="#">Resep Obat</a></li>
+                                        <li><a href="/doctor">Dokter</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -147,9 +153,17 @@
                         <div class="col-xl-6">
                             <select class="form-select wide" name="lokasi" id="default-select" class="">
                                 <option data-display="Pilih Rumah Sakit">Rumah sakit</option>
-                                <option value="1">Rumah sakit A</option>
-                                <option value="2">Rumah sakit B</option>
-                                <option value="3">Rumah sakit C</option>
+                                <option value="Rumah sakit A">Rumah sakit A</option>
+                                <option value="Rumah sakit B">Rumah sakit B</option>
+                                <option value="Rumah sakit C">Rumah sakit C</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-6">
+                            <select class="form-select wide" name="lokasi" id="default-select" class="">
+                                <option data-display="Pilih Rumah Sakit">Rumah sakit</option>
+                                <option value="Rumah sakit A">Rumah sakit A</option>
+                                <option value="Rumah sakit B">Rumah sakit B</option>
+                                <option value="Rumah sakit C">Rumah sakit C</option>
                             </select>
                         </div>
                         <div class="col-xl-6">
@@ -158,7 +172,7 @@
                         <div class="col-xl-6">
                             <input type="text" name="telp" placeholder="Phone no.">
                         </div>
-                        <div class="col-xl-12">
+                        <div class="col-xl-6">
                             @guest
                             @else
                             <input type="email" name="email" value="{{Auth::user()->email}}">
@@ -249,11 +263,10 @@
                                         Departments
                                 </h3>
                                 <ul>
-                                    <li><a href="#">Mata</a></li>
-                                    <li><a href="#">Kulit</a></li>
-                                    <li><a href="#">Pathology</a></li>
-                                    <li><a href="#">Obat</a></li>
-                                    <li><a href="#">Gigi</a></li>
+                                    <li><a href="#">Dokter Umum</a></li>
+                                    <li><a href="#">Dokter Anak</a></li>
+                                    <li><a href="#">Psikiater</a></li>
+                                    <li><a href="#">Dokter THT</a></li>
                                 </ul>
 
                             </div>
@@ -286,9 +299,9 @@
                 </div>
             </div>
         </footer>
-    <!-- form itself end -->
+        <!-- form itself end -->
 
-    <!-- JS here -->
+        <!-- JS here -->
     @yield('script')
     <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>
     <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
@@ -316,6 +329,7 @@
     <script src="{{asset('js/mail-script.js')}}"></script>
 
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
@@ -330,6 +344,7 @@
             }
 
         });
+
     $(document).ready(function() {
     $('.js-example-basic-multiple').select2();
 });
