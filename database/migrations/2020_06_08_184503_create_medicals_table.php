@@ -19,7 +19,6 @@ class CreateMedicalsTable extends Migration
             $table->string('bentuk')->nullable();
             $table->string('nama')->nullable();
             $table->integer('harga')->nullable();
-            $table->foreignId('user_id')->nullable();
         });
     }
 

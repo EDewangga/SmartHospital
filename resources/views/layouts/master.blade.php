@@ -342,9 +342,7 @@
             icons: {
                 rightIcon: '<span class="fa fa-caret-down"></span>'
             }
-
         });
-
     $(document).ready(function() {
     $('.js-example-basic-multiple').select2();
 });

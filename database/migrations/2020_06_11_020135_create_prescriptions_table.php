@@ -18,6 +18,7 @@ class CreatePrescriptionsTable extends Migration
             $table->foreignId('user_id')->nullable();
             $table->foreignId('doctor_id')->nullable();
             $table->foreignId('medical_id')->nullable();
+            $table->foreignId('appointment_id')->nullable();
             $table->timestamps();
         });
     }

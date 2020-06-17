@@ -31,6 +31,10 @@ Route::get('/preception', 'MedicalController@preception');
 Route::post('/preception/fetch', 'MedicalController@fetch')->name('dynamicdependent.fetch');
 Route::post('/preception/fetch-result', 'MedicalController@fetchResult')->name('dynamicdependent.fetch.result');
 
+Route::get('/book', 'RoomController@book');
+Route::post('/book/fetch', 'RoomController@fetch')->name('dynamicdependent.fetch');
+Route::post('/book/fetch-result', 'RoomController@fetchResult')->name('dynamicdependent.fetch.result');
+
 Route::get('medical', 'MedicalController@index');
 Route::post('medical', 'MedicalController@Store');
 Route::get('medical/{id}', 'MedicalController@show');

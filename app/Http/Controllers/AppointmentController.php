@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\appointment;
-use App\Models\Periksa;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,8 +39,7 @@ class AppointmentController extends Controller
             'qrcode' => rand(5, 99999)
         ]);
 
-
-
         return redirect('periksa');
     }
+
 }
