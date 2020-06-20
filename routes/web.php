@@ -51,6 +51,10 @@ Route::get('qrcode', function () {
     return QrCode::size(300)->generate('A basic example of QR code!');
 });
 
+Route::get('/scanqr', function () {
+    return view('scanqr');
+});
+
 Route::get('resep-obat', 'AppointmentController@index');
 Route::post('resep-obat', 'AppointmentController@Store');
 Route::get('resep-obat/{id}', 'AppointmentController@show');

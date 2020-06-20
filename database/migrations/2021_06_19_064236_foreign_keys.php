@@ -24,9 +24,6 @@ class ForeignKeys  extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('doctor_id')->references('id')->on('doctors');
         });
-        Schema::table('appointments_time', function (Blueprint $table) {
-            $table->foreign('doctor_id')->references('id')->on('doctors');
-        });
 
         Schema::table('reservations', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
