@@ -14,15 +14,14 @@ class CreateAppointmentsTable extends Migration
     public function up()
     {
         Schema::create('appointments', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->date('tanggal')->nullable();
             $table->string('lokasi')->nullable();
             $table->string('nama')->nullable();
             $table->string('telp')->nullable();
             $table->string('email')->nullable();
-            $table->foreignId('user_id')->unsigned();
-            $table->foreignId('doctor_id')->unsigned();
-            $table->string('qrcode')->nullable();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('doctor_id')->unsigned();
             $table->timestamps();
         });
     }

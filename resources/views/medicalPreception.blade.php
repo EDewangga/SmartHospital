@@ -44,6 +44,22 @@
                 </table>
             </div>
         </div>
+        <div class="row mt-3">
+            <div class="col">
+                <h3>Cart</h3>
+                <table id="cart-list" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Harga</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </section>
 @endsection
@@ -61,6 +77,30 @@
                 { data: null,
                     render: function ( data, type, row ) {
                         return `<button class="btn btn-sm btn-info choose-medicine" data-nama="${row.nama}" value="${row.id}">Pilih</button>`;
+                    }
+                }
+            ]
+        });
+
+        var cartTable = $('#cart-list').DataTable({
+            ajax: {
+                url: `{{ url('/data/cart') }}`,
+                dataSrc: ''
+            },
+            columns: [
+                { data: null,
+                    render: function ( data, type, row ) {
+                        return `test`;
+                    }
+                },
+                { data: null,
+                    render: function ( data, type, row ) {
+                        return `test`;
+                    }
+                },
+                { data: null,
+                    render: function ( data, type, row ) {
+                        return `test`;
                     }
                 }
             ]

@@ -11,6 +11,14 @@
             <div class="col-6">
                 <div class="blog_left_sidebar">
                     <div class="form-group">
+                        <select name="user" id="user" class="form-control input-lg mb-3 form-select wide">
+                            <option value="">Pilih Pasien</option>
+                            @foreach($room_list as $room)
+                                <option value=""> </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <select name="lokasi" id="lokasi" class="form-control input-lg mb-3 dynamic form-select wide" data-dependent="kelas">
                             <option value="">Pilih Lokasi</option>
                             @foreach($room_list as $room)

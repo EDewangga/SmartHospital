@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text">
-                    <h3>ROOM</h3>
+                    <h3>List Kamar</h3>
                     <p><a href="/">Home /</a> Room</p>
                 </div>
             </div>
@@ -81,13 +81,13 @@
                                                     </div>
                                                         <div class="button-group-area mt-30">
                                                             @foreach ($rooms as $room)
-                                                            @if ($room->lokasi == 1)
+                                                            @if ($room->lokasi == 'Rumah Sakit A')
                                                                 @if ($room->status == 1)
-                                                                    <a href="#" class="genric-btn info-border radius fixed">{{$room->nomor}}</a>
+                                                                    <a href="#" class="genric-btn warning radius fixed">{{$room->nomor}}</a>
                                                                 @elseif ($room->status == 0)
                                                                     <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                                 @else
-                                                                    <a href="#" class="genric-btn warning radius" disabled>{{$room->nomor}}</a>
+                                                                    <a href="#" class="genric-btn info radius fixed " disabled>{{$room->nomor}}</a>
                                                                 @endif
                                                             @endif
                                                         @endforeach
@@ -134,9 +134,9 @@
                                                 </div>
                                                     <div class="button-group-area mt-30">
                                                         @foreach ($rooms as $room)
-                                                            @if ($room->lokasi == 2)
+                                                            @if ($room->lokasi == 'Rumah Sakit B')
                                                                 @if ($room->status == 1)
-                                                                    <a href="#" class="genric-btn info-border radius">{{$room->nomor}}</a>
+                                                                    <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
                                                                 @elseif ($room->status == 0)
                                                                     <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                                 @else
@@ -185,9 +185,9 @@
                                                 </div>
                                                     <div class="button-group-area mt-30">
                                                     @foreach ($rooms as $room)
-                                                        @if ($room->lokasi == 3)
+                                                        @if ($room->lokasi == 'Rumah Sakit C')
                                                             @if ($room->status == 1)
-                                                                <a href="#" class="genric-btn info-border radius">{{$room->nomor}}</a>
+                                                                <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
                                                             @elseif ($room->status == 0)
                                                                 <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                             @else

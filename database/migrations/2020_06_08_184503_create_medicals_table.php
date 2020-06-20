@@ -14,7 +14,7 @@ class CreateMedicalsTable extends Migration
     public function up()
     {
         Schema::create('medicals', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('jenis')->nullable();
             $table->string('bentuk')->nullable();
             $table->string('nama')->nullable();

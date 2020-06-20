@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Medical;
 use App\Models\Room;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Psy\Util\Json;
 
 class RoomController extends Controller
@@ -25,10 +27,11 @@ class RoomController extends Controller
 
     }
 
-    function book()
+    function reservation()
     {
         $room_list = Room::groupBy('lokasi')->get();
-        return view('roomBook')->with('room_list', $room_list);
+        $user_list = User::all();
+        return view('roomReservation')->with('room_list', $room_list);
     }
 
     function fetch(Request $request)

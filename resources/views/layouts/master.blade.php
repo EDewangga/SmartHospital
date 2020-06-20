@@ -152,10 +152,8 @@
                         </div>
                         <div class="col-xl-6">
                             <select class="form-select wide" name="lokasi" id="default-select" class="">
-                                <option data-display="Pilih Rumah Sakit">Rumah sakit</option>
+                                <option data-display="Pilih Spesialis">Spesialis</option>
                                 <option value="Rumah sakit A">Rumah sakit A</option>
-                                <option value="Rumah sakit B">Rumah sakit B</option>
-                                <option value="Rumah sakit C">Rumah sakit C</option>
                             </select>
                         </div>
                         <div class="col-xl-6">
@@ -164,6 +162,19 @@
                                 <option value="Rumah sakit A">Rumah sakit A</option>
                                 <option value="Rumah sakit B">Rumah sakit B</option>
                                 <option value="Rumah sakit C">Rumah sakit C</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-6">
+                            <select class="form-select wide" name="lokasi" id="default-select" class="">
+                                <option data-display="Pilih Dokter">Dokter</option>
+                                <option value="Rumah sakit A">Rumah sakit A</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-6">
+                            <select class="form-select wide" name="lokasi" id="default-select" class="">
+                                <option data-display="Pilih Jam">Jam</option>
+                                <option value="Rumah sakit A">Jam 8 - 12</option>
+                                <option value="Rumah sakit A">Jam 12 - 16</option>
                             </select>
                         </div>
                         <div class="col-xl-6">
@@ -291,7 +302,6 @@
                                 </h3>
                                 <p>
                                     +62 367 467 8934 <br>
-                                    Smart_hospital@contac.com
                                 </p>
                             </div>
                         </div>

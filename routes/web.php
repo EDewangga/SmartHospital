@@ -31,9 +31,11 @@ Route::get('/preception', 'MedicalController@preception');
 Route::post('/preception/fetch', 'MedicalController@fetch')->name('dynamicdependent.fetch');
 Route::post('/preception/fetch-result', 'MedicalController@fetchResult')->name('dynamicdependent.fetch.result');
 
-Route::get('/book', 'RoomController@book');
-Route::post('/book/fetch', 'RoomController@fetch')->name('dynamicdependent.fetch');
-Route::post('/book/fetch-result', 'RoomController@fetchResult')->name('dynamicdependent.fetch.result');
+Route::get('/reservation', 'RoomController@reservation');
+Route::post('/reservation/fetch', 'RoomController@fetch')->name('dynamicdependent.fetch');
+Route::post('/reservation/fetch-result', 'RoomController@fetchResult')->name('dynamicdependent.fetch.result');
+
+Route::get('/data/cart', 'CartController@userCart');
 
 Route::get('medical', 'MedicalController@index');
 Route::post('medical', 'MedicalController@Store');
@@ -42,6 +44,8 @@ Route::get('medical/{id}', 'MedicalController@show');
 Route::get('periksa', 'AppointmentController@index');
 Route::post('periksa', 'AppointmentController@Store');
 Route::get('periksa/{id}', 'AppointmentController@show');
+
+Route::get('/registrasi', 'AppointmentController@book');
 
 Route::get('qrcode', function () {
     return QrCode::size(300)->generate('A basic example of QR code!');

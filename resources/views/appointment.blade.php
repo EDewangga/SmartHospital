@@ -1,7 +1,18 @@
 @extends('layouts.master')
 
 @section('content')
-
+<div class="bradcam_area breadcam_bg bradcam_overlay">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="bradcam_text">
+                <h3>List Priksa</h3>
+                <p><a href="/">Home /</a> appointment</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <section class="blog_area section-padding">
     <div class="container">
         <div class="row">

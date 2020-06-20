@@ -13,12 +13,13 @@ class CreatePrescriptionsTable extends Migration
      */
     public function up()
     {
+        // transaksi obat
         Schema::create('prescriptions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('user_id')->nullable();
-            $table->foreignId('doctor_id')->nullable();
-            $table->foreignId('medical_id')->nullable();
-            $table->foreignId('appointment_id')->nullable();
+            $table->bigIncrements('id');
+            // $table->foreignId('user_id')->nullable(); tak comment sale ndek appoint men wes ono user id karo doctor id
+            // $table->foreignId('doctor_id')->nullable();
+            $table->bigInteger('appointment_id')->unsigned();
+            $table->integer('total');
             $table->timestamps();
         });
     }
