@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Doctor;
+use App\Models\Doctor;
 
 class DoctorController extends Controller
 {

@@ -30,8 +30,8 @@ class RoomController extends Controller
     function reservation()
     {
         $room_list = Room::groupBy('lokasi')->get();
-        $user_list = User::all();
-        return view('roomReservation')->with('room_list', $room_list);
+        $users = User::where('rules', 1)->get();
+        return view('roomReservation', ['room_list' => $room_list , 'users' => $users]);
     }
 
     function fetch(Request $request)

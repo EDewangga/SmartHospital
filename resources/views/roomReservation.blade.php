@@ -11,13 +11,20 @@
             <div class="col-6">
                 <div class="blog_left_sidebar">
                     <div class="form-group">
-                        <select name="user" id="user" class="form-control input-lg mb-3 form-select wide">
+                        <select name="jenis" id="jenis" class="form-control input-lg mb-3 user_select form-select wide">
                             <option value="">Pilih Pasien</option>
-                            @foreach($room_list as $room)
-                                <option value=""> </option>
+                            @foreach($users as $user)
+                                <option value="{{ $user->id}}">{{ $user->name }}</option>
                             @endforeach
                         </select>
                     </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <div class="blog_left_sidebar">
                     <div class="form-group">
                         <select name="lokasi" id="lokasi" class="form-control input-lg mb-3 dynamic form-select wide" data-dependent="kelas">
                             <option value="">Pilih Lokasi</option>
@@ -74,7 +81,6 @@
             ]
         });
         var selectedLokasi = ''
-
         $('.dynamic').change(function(){
             if ($(this).val() == "Pilih Lokasi") {
                 return;
@@ -86,7 +92,7 @@
                 var dependent = $(this).data('dependent');
                 var _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url:"{{ url('/book/fetch') }}",
+                    url:"{{ url('/reservation/fetch') }}",
                     method:"POST",
                     data:{select:select, value:value, _token:_token, dependent:dependent},
                     success:function(result){
@@ -102,7 +108,6 @@
                 })
             }
         });
-
         $(document).on('change', '.dynamic-nomor', function() {
             var val = $('.dynamic-nomor ul').find(".selected")[0]
             if (val.innerHTML == "Pilih Kelas") {
@@ -114,7 +119,7 @@
                 var dependent = $(this).data('dependent');
                 var _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url:"{{ url('/book/fetch-result') }}",
+                    url:"{{ url('/reservation/fetch-result') }}",
                     method:"POST",
                     data:{select:select, value:value, _token:_token, dependent:dependent, lokasi:selectedLokasi},
                     success:function(result){
@@ -127,7 +132,6 @@
                 })
             }
         });
-
         $(document).on('click', '.choose-room', function() {
             // value iki id, nek kate nambahi lain2 e yo iso
             var value = $(this).val();
@@ -147,7 +151,6 @@
             //     }
             // })
         });
-
     });
     </script>
 @endsection

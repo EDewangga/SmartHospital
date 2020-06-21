@@ -19,7 +19,7 @@ class CreatePrescriptionsTable extends Migration
             // $table->foreignId('user_id')->nullable(); tak comment sale ndek appoint men wes ono user id karo doctor id
             // $table->foreignId('doctor_id')->nullable();
             $table->bigInteger('appointment_id')->unsigned();
-            $table->integer('status');
+            $table->integer('status')->default('1');
             $table->integer('total');
             $table->dateTime('ambil');
             $table->timestamps();

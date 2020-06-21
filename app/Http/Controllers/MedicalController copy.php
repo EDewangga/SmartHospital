@@ -2,15 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Medical;
+use App\Models\Appointment;
+use App\Models\Medical;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MedicalController extends Controller
 {
-    function preception()
+    public function index()
+    {
+        $medical = Medical::all();
+        $users = User::all();
+        return view('medical', ['medical' => $medical , 'users' => $users]);
+    }
+
+    // public function show($id)
+    // {
+    //     $medical = Medical::();
+    //     return view('appointmentsingle)', ['appointment' => $appointment]);
+    // }
+
+    function prescription()
     {
         $medical_list = Medical::groupBy('jenis')->get();
-        return view('medicalPreception')->with('medical_list', $medical_list);
+        $users = Appointment::where('doctor_id', Auth::user()->doctor_id)->get();
+        return view('medicalprescription', compact('medical_list', 'users'));
     }
 
     function fetch(Request $request)

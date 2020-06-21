@@ -20,6 +20,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('nama')->nullable();
             $table->string('telp')->nullable();
             $table->string('email')->nullable();
+            $table->integer('status')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('doctor_id')->unsigned();
             $table->timestamps();

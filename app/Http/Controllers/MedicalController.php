@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Medical;
+use App\Models\Medical;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -21,10 +21,11 @@ class MedicalController extends Controller
     //     return view('appointmentsingle)', ['appointment' => $appointment]);
     // }
 
-    function preception()
+    function prescription()
     {
         $medical_list = Medical::groupBy('jenis')->get();
-        return view('medicalPreception')->with('medical_list', $medical_list);
+        $users = User::where('rules', 1)->get();
+        return view('medicalprescription', compact('medical_list', 'users'));
     }
 
     function fetch(Request $request)

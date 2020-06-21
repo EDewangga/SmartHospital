@@ -13,7 +13,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
         $doctorIDs = DB::table('doctors')->pluck('id');
         $password = Hash::make('123');
         DB::table('users')->insert(array(

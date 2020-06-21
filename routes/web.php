@@ -27,15 +27,18 @@ Route::get('/kamar', 'RoomController@index');
 
 Route::get('/doctor', 'DoctorController@index');
 
-Route::get('/preception', 'MedicalController@preception');
-Route::post('/preception/fetch', 'MedicalController@fetch')->name('dynamicdependent.fetch');
-Route::post('/preception/fetch-result', 'MedicalController@fetchResult')->name('dynamicdependent.fetch.result');
+Route::get('/prescription', 'MedicalController@prescription');
+Route::post('/prescription/fetch', 'MedicalController@fetch')->name('dynamicdependent.fetch');
+Route::post('/prescription/fetch-result', 'MedicalController@fetchResult')->name('dynamicdependent.fetch.result');
 
 Route::get('/reservation', 'RoomController@reservation');
 Route::post('/reservation/fetch', 'RoomController@fetch')->name('dynamicdependent.fetch');
 Route::post('/reservation/fetch-result', 'RoomController@fetchResult')->name('dynamicdependent.fetch.result');
 
-Route::get('/data/cart', 'CartController@userCart');
+Route::get('/data/cart/{id}', 'CartController@userCart');
+Route::post('/add-cart', 'CartController@addCart');
+Route::post('/delete-cart', 'CartController@deleteCart');
+Route::post('/checkout', 'CartController@checkout');
 
 Route::get('medical', 'MedicalController@index');
 Route::post('medical', 'MedicalController@Store');
@@ -54,9 +57,5 @@ Route::get('qrcode', function () {
 Route::get('/scanqr', function () {
     return view('scanqr');
 });
-
-Route::get('resep-obat', 'AppointmentController@index');
-Route::post('resep-obat', 'AppointmentController@Store');
-Route::get('resep-obat/{id}', 'AppointmentController@show');
 
 Route::get('/json-kelaskamar','RoomController@kelaskamar');
