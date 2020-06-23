@@ -83,11 +83,11 @@
                                                             @foreach ($rooms as $room)
                                                             @if ($room->lokasi == 'Rumah Sakit A')
                                                                 @if ($room->status == 1)
-                                                                    <a href="#" class="genric-btn warning radius fixed">{{$room->nomor}}</a>
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn warning radius fixed">{{$room->nomor}}</a>
                                                                 @elseif ($room->status == 0)
-                                                                    <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                                 @else
-                                                                    <a href="#" class="genric-btn info radius fixed " disabled>{{$room->nomor}}</a>
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn info radius fixed " disabled>{{$room->nomor}}</a>
                                                                 @endif
                                                             @endif
                                                         @endforeach
@@ -136,11 +136,11 @@
                                                         @foreach ($rooms as $room)
                                                             @if ($room->lokasi == 'Rumah Sakit B')
                                                                 @if ($room->status == 1)
-                                                                    <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn warning radius fixed">{{$room->nomor}}</a>
                                                                 @elseif ($room->status == 0)
-                                                                    <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn disable radius">{{$room->nomor}}</a>
                                                                 @else
-                                                                    <a href="#" class="genric-btn warning radius">{{$room->nomor}}</a>
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn info radius fixed " disabled>{{$room->nomor}}</a>
                                                                 @endif
                                                             @endif
                                                         @endforeach
@@ -187,12 +187,12 @@
                                                     @foreach ($rooms as $room)
                                                         @if ($room->lokasi == 'Rumah Sakit C')
                                                             @if ($room->status == 1)
-                                                                <a href="#" class="genric-btn info radius">{{$room->nomor}}</a>
-                                                            @elseif ($room->status == 0)
-                                                                <a href="#" class="genric-btn disable radius">{{$room->nomor}}</a>
-                                                            @else
-                                                                <a href="#" class="genric-btn warning radius">{{$room->nomor}}</a>
-                                                            @endif
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn warning radius fixed">{{$room->nomor}}</a>
+                                                                @elseif ($room->status == 0)
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn disable radius">{{$room->nomor}}</a>
+                                                                @else
+                                                                    <a href="kamar/{{$room->id}}" class="genric-btn info radius fixed " disabled>{{$room->nomor}}</a>
+                                                                @endif
                                                         @endif
                                                     @endforeach
 

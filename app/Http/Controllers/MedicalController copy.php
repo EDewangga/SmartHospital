@@ -23,11 +23,11 @@ class MedicalController extends Controller
     //     return view('appointmentsingle)', ['appointment' => $appointment]);
     // }
 
-    function prescription()
+    function preception()
     {
         $medical_list = Medical::groupBy('jenis')->get();
         $users = Appointment::where('doctor_id', Auth::user()->doctor_id)->get();
-        return view('medicalprescription', compact('medical_list', 'users'));
+        return view('medicalPreception', compact('medical_list', 'users'));
     }
 
     function fetch(Request $request)

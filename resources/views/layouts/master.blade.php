@@ -141,7 +141,7 @@
 
     @yield('content')
 
-    <form id="test-form"action="periksa" method="post" class="white-popup-block mfp-hide">
+    <form id="test-form" action="periksa" method="post" class="white-popup-block mfp-hide">
         <div class="popup_box ">
             <div class="popup_inner">
                 <h3>Make an Appointment</h3>
@@ -152,29 +152,28 @@
                         </div>
                         <div class="col-xl-6">
                             <select class="form-select wide" name="lokasi" id="default-select" class="">
+                                <option data-display="Pilih Lokasi">Lokasi</option>
+                                <option value="Rumah sakit A">Rumah sakit A</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-6">
+                            <select class="form-select wide" name="specialis" id="specialis" class="">
                                 <option data-display="Pilih Spesialis">Spesialis</option>
-                                <option value="Rumah sakit A">Rumah sakit A</option>
+                                <option value="id">Dokter THT</option>
+
                             </select>
                         </div>
                         <div class="col-xl-6">
-                            <select class="form-select wide" name="lokasi" id="default-select" class="">
-                                <option data-display="Pilih Rumah Sakit">Rumah sakit</option>
-                                <option value="Rumah sakit A">Rumah sakit A</option>
-                                <option value="Rumah sakit B">Rumah sakit B</option>
-                                <option value="Rumah sakit C">Rumah sakit C</option>
-                            </select>
-                        </div>
-                        <div class="col-xl-6">
-                            <select class="form-select wide" name="lokasi" id="default-select" class="">
+                            <select class="form-select wide" name="doctor_id" id="default-select" class="">
                                 <option data-display="Pilih Dokter">Dokter</option>
-                                <option value="Rumah sakit A">Rumah sakit A</option>
+                                <option value="1">Dr. Rehaan Dickerson</option>
                             </select>
                         </div>
                         <div class="col-xl-6">
-                            <select class="form-select wide" name="lokasi" id="default-select" class="">
+                            <select class="form-select wide" name="segment_time" id="default-select" class="">
                                 <option data-display="Pilih Jam">Jam</option>
-                                <option value="Rumah sakit A">Jam 8 - 12</option>
-                                <option value="Rumah sakit A">Jam 12 - 16</option>
+                                <option value="pagi">Jam 8 - 12</option>
+                                <option value="siang">Jam 12 - 16</option>
                             </select>
                         </div>
                         <div class="col-xl-6">
@@ -191,7 +190,7 @@
 
                         </div>
                         <div class="col-xl-12">
-                            <button type="submit" name="submit" class="boxed-btn3" value="create">Confirm</button>
+                            <button type="submit" class="boxed-btn3">Confirm</button>
                             {{-- <input type="hidden" name="_method" value="POST"> --}}
                             {{ csrf_field() }}
                         </div>
@@ -358,6 +357,34 @@
     $('.js-example-basic-multiple').select2();
 });
     </script>
+
+    {{-- <script>
+	$('#spesialis').change(function(){
+		let id = $(this).val();
+		// alert(id);
+		$.ajax({
+			url : '{{route('periksa.fetch')}}',
+			data: {
+				"_token": "{{csrf_token()}}",
+				"id": id
+			},
+			type: 'post',
+			dataType: 'json',
+			success: function( result )
+			{
+				$.each( result, function(k, v) {
+					$('#ss_menu').append($('<option>', {value:k, text:v}));
+					$("#sub_indikator_menu").show();
+				});
+			},
+			error: function()
+			{
+				//handle errors
+				alert('Error...');
+			}
+		});
+	});
+    </script> --}}
 </body>
 
 </html>

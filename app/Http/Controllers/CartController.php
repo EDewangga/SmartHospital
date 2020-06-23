@@ -46,33 +46,33 @@ class CartController extends Controller
     }
 
     public function checkout(Request $request) {
-        // TAMBAH APPOINTMENT 
+        // TAMBAH APPOINTMENT
         $appointment = new Appointment;
-        // sesuai form 
+        // sesuai form
         // $appointment->name = $request->name;
         // $appointment->tanggal = date('Y-m-d H:i:s');
         // $appointment->lokasi = $request->lokasi;
         // $appointment->nama = $request->name;
         // $appointment->telp = $request->phone;
         // $appointment->email =  Auth::user()->email;
-        $appointment->user_id = $request->user_id;
-        $appointment->doctor_id = Auth::user()->id;
-        $appointment->save();
+        // $appointment->user_id = $request->user_id;
+        // $appointment->doctor_id = Auth::user()->id;
+        // $appointment->save();
 
         if (!$appointment) {
             return false;
         }
 
         $total = 0;
-        // GET CART PUNYA PASIEN 
+        // GET CART PUNYA PASIEN
         $carts = Cart::with('medical')->where('user_id', $request->user_id)->get();
 
-        // MENGHITUNG TOTAL 
+        // MENGHITUNG TOTAL
         foreach ($carts as $cart) {
             $total+=($cart->quantity * $cart->medical->harga);
         }
 
-        // TAMBAH PRESCRIPTIONS 
+        // TAMBAH PRESCRIPTIONS
         $prescriptions =  new Prescriptions;
         $prescriptions->appointment_id = $appointment->id;
         $prescriptions->status = 0;
@@ -85,7 +85,7 @@ class CartController extends Controller
             return false;
         }
 
-        // INSERT PRESCRIPTION DETAILS 
+        // INSERT PRESCRIPTION DETAILS
         foreach ($carts as $cart) {
             $detail = new PrescriptionDetails;
             $detail->prescription_id = $prescriptions->id;

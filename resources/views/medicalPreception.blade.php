@@ -16,7 +16,7 @@
             <div class="col-6">
                 <div class="blog_left_sidebar">
                     <div class="form-group">
-                        <select name="jenis" id="jenis" class="form-control input-lg mb-3 user_select form-select wide">
+                        <select name="appointment" id="appointment" class="form-control input-lg mb-3 user_select form-select wide">
                             <option value="">Pilih Pasien</option>
                             @foreach($users as $user)
                                 <option value="{{ $user->id}}">{{ $user->nama }}</option>
@@ -220,7 +220,7 @@
                 var dependent = $(this).data('dependent');
                 var _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url:"{{ url('/prescription/fetch') }}",
+                    url:"{{ url('/preception/fetch') }}",
                     method:"POST",
                     data:{select:select, value:value, _token:_token, dependent:dependent},
                     success:function(result){
@@ -248,7 +248,7 @@
                 var dependent = $(this).data('dependent');
                 var _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url:"{{ url('/prescription/fetch-result') }}",
+                    url:"{{ url('/preception/fetch-result') }}",
                     method:"POST",
                     data:{select:select, value:value, _token:_token, dependent:dependent, jenis:selectedJenis},
                     success:function(result){

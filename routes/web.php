@@ -24,12 +24,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/kamar', 'RoomController@index');
+Route::post('/kamar/{id}', 'RoomController@Store');
+Route::get('/kamar/{id}', 'RoomController@show');
 
 Route::get('/doctor', 'DoctorController@index');
 
-Route::get('/prescription', 'MedicalController@prescription');
-Route::post('/prescription/fetch', 'MedicalController@fetch')->name('dynamicdependent.fetch');
-Route::post('/prescription/fetch-result', 'MedicalController@fetchResult')->name('dynamicdependent.fetch.result');
+Route::get('/preception', 'MedicalController@preception');
+Route::post('/preception/fetch', 'MedicalController@fetch')->name('dynamicdependent.fetch');
+Route::post('/preception/fetch-result', 'MedicalController@fetchResult')->name('dynamicdependent.fetch.result');
 
 Route::get('/reservation', 'RoomController@reservation');
 Route::post('/reservation/fetch', 'RoomController@fetch')->name('dynamicdependent.fetch');
@@ -47,6 +49,8 @@ Route::get('medical/{id}', 'MedicalController@show');
 Route::get('periksa', 'AppointmentController@index');
 Route::post('periksa', 'AppointmentController@Store');
 Route::get('periksa/{id}', 'AppointmentController@show');
+Route::post('/periksa/fetch', 'AppointmentController@fetch')->name('periksa.fetch');
+Route::post('/periksa/fetch-result', 'AppointmentController@fetchResult')->name('periksa.fetch.result');
 
 Route::get('/registrasi', 'AppointmentController@book');
 
@@ -57,5 +61,9 @@ Route::get('qrcode', function () {
 Route::get('/scanqr', function () {
     return view('scanqr');
 });
+
+Route::get('resep-obat', 'AppointmentController@index');
+Route::post('resep-obat', 'AppointmentController@Store');
+Route::get('resep-obat/{id}', 'AppointmentController@show');
 
 Route::get('/json-kelaskamar','RoomController@kelaskamar');

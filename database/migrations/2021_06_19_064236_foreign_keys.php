@@ -27,7 +27,6 @@ class ForeignKeys  extends Migration
 
         Schema::table('reservations', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('doctor_id')->references('id')->on('doctors');
             $table->foreign('room_id')->references('id')->on('rooms');
         });
 
